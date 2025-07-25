@@ -209,7 +209,7 @@ body {
   top: -50px;
   width: 30px;
   height: 30px;
-  background-image: url('./assets/Rose.png'); /* Transparent rose petal */
+  background-image: url('/Rose.png'); /* Transparent rose petal */
   background-size: cover;
   animation: fall linear infinite;
 }
