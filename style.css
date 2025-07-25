@@ -1,0 +1,222 @@
+/* 🩷 Base Setup */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Zeyada', cursive;
+  background-color: #fdebed;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 📝 Paper Block */
+.paper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('./assets/paper.jpg');
+  background-size: cover;
+  border: 2px solid black;
+  padding: 30px 40px;
+  max-width: 360px;
+  width: 90%;
+  box-shadow: 1px 8px 15px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  text-align: center;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  z-index: 20;
+}
+
+.paper p {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* 🖼️ Image Block Styling */
+.image-paper {
+  max-width: 360px;
+  width: 90%;
+  padding: 30px 40px;
+  border-radius: 10px;
+  z-index: 10;
+  box-shadow: 1px 8px 15px rgba(0, 0, 0, 0.3);
+  background-image: url('./assets/paper.jpg');
+  background-size: cover;
+  border: 2px solid black;
+  text-align: center;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.image-paper img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  pointer-events: none;
+}
+
+/* 🎁 Flip Paper Styling */
+.flip-paper {
+  perspective: 1000px;
+  max-width: 420px;
+  width: 90%;
+  height: 320px;
+  border-radius: 16px;
+  background: transparent;
+  z-index: 100;
+}
+
+.paper.flip-paper {
+  background-image: none !important;
+  background-color: transparent !important;
+  box-shadow: 0 8px 0px rgba(0,0,0,0);
+  border: none;
+}
+
+/* Flip Animation */
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.flip-paper.active .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-image: url('./assets/paper.jpg');
+  background-size: cover;
+  border: 2px solid black;
+  border-radius: 16px;
+  padding: 4px 5px;
+  font-size: 2.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 10px rgba(255,105,180,0.1);
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+/* ✨ Trina Glow */
+.trina-glow {
+  animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 5px #ff69b4; }
+  to   { text-shadow: 0 0 20px #ff1493; }
+}
+
+/* 💖 Floating Hearts */
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  animation: float-up linear infinite;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes float-up {
+  0%   { transform: translateY(0) scale(1); opacity: 0.8; }
+  50%  { opacity: 1; }
+  100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
+
+/* 💬 Floating Texts */
+.floating-text {
+  position: fixed;
+  bottom: -30px;
+  font-size: 1.5rem;
+  color: #ff3366;
+  font-family: 'Zeyada', cursive;
+  animation: float-up-text linear infinite;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+@keyframes float-up-text {
+  0%   { transform: translateY(0) scale(1); opacity: 0.7; }
+  50%  { opacity: 1; }
+  100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+}
+
+/* ❤️ Corners + Footer */
+.corner-heart {
+  position: fixed;
+  top: 20px;
+  font-size: 30px;
+  color: red;
+  z-index: 1000;
+}
+.corner-heart.left  { left: 20px; }
+.corner-heart.right { right: 20px; }
+
+footer {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+}
+footer p {
+  font-size: large;
+  margin: 0;
+}
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #000; /* Black background for cinematic vibe */
+}
+
+.petal {
+  position: absolute;
+  top: -50px;
+  width: 30px;
+  height: 30px;
+  background-image: url('./assets/Rose.png'); /* Transparent rose petal */
+  background-size: cover;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
